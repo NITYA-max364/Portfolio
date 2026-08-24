@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nitya Gupta | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #17213b;
+            background: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            height: 86px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            background: white;
+            border-bottom: 1px solid #e9e9ef;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 800;
+            color: #29417d;
+        }
+
+        .logo span {
+            color: #6855ee;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 38px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 700;
+            color: #293149;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #6654ed;
+        }
+
+        .cv-nav {
+            background: #6752e9;
+            color: white !important;
+            padding: 14px 22px;
+            border-radius: 12px;
+        }
+
+        /* ================= HERO ================= */
+
+        #home {
+            min-height: calc(100vh - 86px);
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            align-items: center;
+            gap: 50px;
+            padding: 70px 8%;
+            background:
+                radial-gradient(circle at 85% 25%, #f0edff, transparent 35%),
+                linear-gradient(120deg, #ffffff, #fafaff);
+        }
+
+        .hero-small {
+            color: #6653ee;
+            letter-spacing: 5px;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+
+        .hero-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(60px, 7vw, 100px);
+            line-height: 0.98;
+            color: #17213b;
+            margin-bottom: 30px;
+        }
+
+        .hero-title span {
+            color: #6752eb;
+        }
+
+        .hero-subtitle {
+            font-size: 27px;
+            line-height: 1.45;
+            font-weight: 800;
+            color: #485672;
+            margin-bottom: 25px;
+        }
+
+        .hero-description {
+            max-width: 750px;
+            color: #657692;
+            font-size: 20px;
+            line-height: 1.75;
+            margin-bottom: 32px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 17px 27px;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 700;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #6752eb;
+            color: white;
+            box-shadow: 0 12px 30px rgba(103, 82, 235, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #5844d9;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #33405b;
+            border: 1px solid #d5d8e2;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            border-color: #6752eb;
+        }
+
+        .hero-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .social {
+            width: 48px;
+            height: 48px;
+            border: 1px solid #d9dce6;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .social:hover {
+            background: #6752eb;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ================= PHOTO ================= */
+
+        .hero-photo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-photo {
+            width: min(100%, 500px);
+            height: 600px;
+            object-fit: cover;
+            border-radius: 30px;
+            border: 10px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 30px 60px rgba(44, 52, 82, 0.15);
+            background: #f1efff;
+        }
+
+        /* ================= COMMON SECTION ================= */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 55px;
+            color: #17213b;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #71809a;
+            font-size: 18px;
+            margin-bottom: 55px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        #about {
+            background: #fafaff;
+        }
+
+        .about-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .about-box {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid #e4e5ed;
+            box-shadow: 0 12px 30px rgba(30, 40, 80, 0.05);
+        }
+
+        .about-box h3 {
+            color: #33467d;
+            margin-bottom: 15px;
+            font-size: 25px;
+        }
+
+        .about-box p {
+            color: #66758f;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .skill-card {
+            padding: 30px;
+            border: 1px solid #e3e4ec;
+            border-radius: 18px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(45, 48, 90, 0.09);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 12px;
+            color: #34477f;
+        }
+
+        .skill-card p {
+            color: #6c7a92;
+            line-height: 1.6;
+        }
+
+        /* ================= EDUCATION ================= */
+
+        #education {
+            background: #fafaff;
+        }
+
+        .education-card {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 22px;
+            border: 1px solid #e2e4ec;
+            box-shadow: 0 15px 35px rgba(40, 50, 90, 0.06);
+        }
+
+        .education-card h3 {
+            font-size: 28px;
+            color: #2d427a;
+            margin-bottom: 10px;
+        }
+
+        .education-card h4 {
+            color: #6752eb;
+            margin-bottom: 15px;
+        }
+
+        .education-card p {
+            color: #687792;
+            line-height: 1.7;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            border: 1px solid #e1e3eb;
+            border-radius: 20px;
+            padding: 30px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(45, 48, 90, 0.09);
+        }
+
+        .project-card h3 {
+            color: #30447e;
+            margin-bottom: 15px;
+            font-size: 23px;
+        }
+
+        .project-card p {
+            color: #687791;
+            line-height: 1.7;
+        }
+
+        /* ================= CERTIFICATES ================= */
+
+        #certificates {
+            background: #f8f9fd;
+        }
+
+        .certificates-grid {
+            max-width: 1250px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .certificate-card {
+            background: white;
+            border: 1px solid #dfe2eb;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 45px rgba(35, 45, 80, 0.12);
+        }
+
+        .certificate-image {
+            height: 280px;
+            background: #eeeeee;
+            overflow: hidden;
+        }
+
+        .certificate-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .certificate-content {
+            padding: 28px;
+        }
+
+        .certificate-content h3 {
+            color: #29417d;
+            font-size: 22px;
+            margin-bottom: 14px;
+        }
+
+        .certificate-content p {
+            color: #687791;
+            line-height: 1.65;
+        }
+
+        /* ================= CONTACT ================= */
+
+        #contact {
+            background: #fafaff;
+        }
+
+        .contact-box {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            padding: 55px;
+            background: white;
+            border-radius: 25px;
+            border: 1px solid #e0e2eb;
+        }
+
+        .contact-box h3 {
+            font-size: 32px;
+            color: #2d427a;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: #6c7990;
+            font-size: 18px;
+            margin-bottom: 28px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 30px 8%;
+            background: #17213b;
+            color: white;
+            text-align: center;
+        }
+
+        footer span {
+            color: #8d7cff;
+        }
+
+        /* ================= IMAGE POPUP ================= */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
+            z-index: 5000;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal img {
+            max-width: 90vw;
+            max-height: 88vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            right: 30px;
+            top: 20px;
+            color: white;
+            font-size: 45px;
+            cursor: pointer;
+            font-weight: 300;
+        }
+
+        /* ================= ACHIEVEMENTS & CONTACT LINKS ================= */
+
+        .achievements-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .achievement-card {
+            padding: 30px;
+            border: 1px solid #e3e4ec;
+            border-radius: 18px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(45, 48, 90, 0.09);
+        }
+
+        .achievement-card h3 {
+            margin-bottom: 12px;
+            color: #34477f;
+        }
+
+        .achievement-meta {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            margin-bottom: 10px;
+            color: #6f7ea3;
+        }
+
+        .achievement-card p {
+            color: #6c7a92;
+            line-height: 1.7;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .contact-link {
+            display: inline-block;
+            padding: 13px 20px;
+            border-radius: 12px;
+            border: 1px solid #d5d8e2;
+            color: #33405b;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-3px);
+            border-color: #6752eb;
+            color: #6752eb;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1000px) {
+
+            .nav-links {
+                gap: 18px;
+            }
+
+            #home {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons,
+            .hero-socials {
+                justify-content: center;
+            }
+
+            .hero-photo-wrapper {
+                order: -1;
+            }
+
+            .hero-photo {
+                width: 400px;
+                height: 500px;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .certificates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .hero-title {
+                font-size: 55px;
+            }
+
+            .hero-subtitle {
+                font-size: 21px;
+            }
+
+            .hero-description {
+                font-size: 17px;
+            }
+
+            .hero-photo {
+                width: 90%;
+                height: 450px;
+            }
+
+            .about-container,
+            .skills-grid,
+            .projects-grid,
+            .certificates-grid,
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+        <div class="logo">Nitya<span>.</span></div>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#journey">Journey</a>
+            <a href="#projects">Projects</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+
+            <!-- CV BUTTON -->
+            <a href="Pel/assets/Resume.pdf"
+               class="cv-nav"
+               download>
+                Download CV ↓
+            </a>
+        </div>
+    </nav>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home">
+
+        <div class="hero-text">
+
+            <div class="hero-small">
+                COMPUTER SCIENCE & ENGINEERING STUDENT
+            </div>
+
+            <h1 class="hero-title">
+                Hello, I'm<br>
+                <span>Nitya Gupta.</span>
+            </h1>
+
+            <h2 class="hero-subtitle">
+                B.Tech CSE Student · AI/ML Explorer · Aspiring Developer
+            </h2>
+
+            <p class="hero-description">
+                A curious Computer Science Engineering student at
+                Lovely Professional University, passionate about
+                programming, Artificial Intelligence and Machine Learning.
+                I enjoy learning new technologies, solving problems and
+                turning creative ideas into practical projects.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    Explore My Work →
+                </a>
+
+                <a href="#certificates" class="btn btn-secondary">
+                    View Certificates
+                </a>
+
+                <!-- CV BUTTON -->
+                <a href="Pel/assets/Resume.pdf"
+                   class="btn btn-secondary"
+                   download>
+                    Download Resume ↓
+                </a>
+
+            </div>
+
+            <div class="hero-socials">
+
+                <a href="https://github.com/NITYA-max364" class="social" target="_blank" rel="noopener noreferrer">GH</a>
+                <a href="https://www.linkedin.com/in/nitya-gupta-706b60390/" class="social" target="_blank" rel="noopener noreferrer">IN</a>
+                <a href="mailto:nityagupta194@gmail.com" class="social">@</a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO -->
+
+        <div class="hero-photo-wrapper">
+
+            <img
+                class="hero-photo"
+                src="Pel/assets/Photo.jpeg"
+                alt="Nitya Gupta"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <p class="section-subtitle">
+            A little about my journey, interests and what I enjoy building.
+        </p>
+
+
+        <div class="about-container">
+
+            <div class="about-box">
+
+                <h3>Who I Am</h3>
+
+                <p>
+                    I am a B.Tech Computer Science Engineering student at
+                    Lovely Professional University with a strong interest
+                    in technology, programming and software development.
+                    I enjoy exploring new concepts and continuously
+                    improving my technical skills.
+                </p>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <h3>What I Enjoy</h3>
+
+                <p>
+                    I like solving programming problems, experimenting
+                    with Artificial Intelligence and Machine Learning,
+                    participating in hackathons and working on projects
+                    that turn ideas into useful solutions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            Skills
+        </h2>
+
+        <p class="section-subtitle">
+            Technologies and areas I am learning and working with.
+        </p>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>C++</h3>
+                <p>
+                    Problem solving, programming fundamentals,
+                    algorithms and data structures.
+                </p>
+            </div>
+
+
+            <div class="skill-card">
+                <h3>HTML & CSS</h3>
+                <p>
+                    Building responsive and visually appealing
+                    web pages and portfolio websites.
+                </p>
+            </div>
+
+
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <p>
+                    Learning interactive web development and
+                    browser-based functionality.
+                </p>
+            </div>
+
+
+            <div class="skill-card">
+                <h3>AI / ML</h3>
+                <p>
+                    Exploring Artificial Intelligence and Machine
+                    Learning concepts and applications.
+                </p>
+            </div>
+
+
+            <div class="skill-card">
+                <h3>Git & GitHub</h3>
+                <p>
+                    Version control, project management and
+                    maintaining code repositories.
+                </p>
+            </div>
+
+
+            <div class="skill-card">
+                <h3>Problem Solving</h3>
+                <p>
+                    Logical thinking, algorithmic approaches and
+                    solving programming challenges.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= JOURNEY ================= -->
+
+    <section id="journey">
+
+        <h2 class="section-title">
+            Journey
+        </h2>
+
+        <p class="section-subtitle">
+            A few milestones that have shaped my learning, projects and growth.
+        </p>
+
+        <div class="education-card">
+
+            <h3>
+                B.Tech — Computer Science Engineering
+            </h3>
+
+            <h4>
+                Lovely Professional University
+            </h4>
+
+            <p>
+                My journey in Computer Science has been built around learning
+                by doing — strengthening programming fundamentals, exploring
+                Artificial Intelligence and Machine Learning, and continuously
+                improving my problem-solving skills.
+            </p>
+
+            <p style="margin-top: 18px;">
+                From participating in hackathons to building practical
+                solutions, I have enjoyed turning classroom concepts into
+                real projects. My work has included a food-leftover solution,
+                an accessibility-focused ECE project and a farmer-focused
+                mandi solution.
+            </p>
+
+            <p style="margin-top: 18px;">
+                Alongside academics and projects, I continue to grow through
+                community activities, teaching, collaboration and hands-on
+                learning.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            Projects
+        </h2>
+
+        <p class="section-subtitle">
+            Some of the things I have worked on and continue to explore.
+        </p>
+
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+
+                <h3>Food Leftover Management</h3>
+
+                <p>
+                    A first-semester hackathon project focused on reducing
+                    food wastage by creating a practical solution for
+                    managing and redistributing leftover food. The project
+                    explored how technology can help connect surplus food
+                    with people who can benefit from it.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Tap-A-Toe</h3>
+
+                <p>
+                    An ECE project designed to make digital interaction
+                    more accessible for people with physical disabilities.
+                    The concept enables users to control actions such as
+                    scrolling through reels using toe-based interaction,
+                    providing a hands-free and alternative way to operate
+                    a device.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Smart Mandi for Farmers</h3>
+
+                <p>
+                    A second-semester project focused on helping farmers
+                    make better decisions when selling their crops.
+                    The idea was to help farmers compare available mandi
+                    prices and choose a suitable market where they could
+                    sell their produce at a better price, reducing the
+                    chances of missing out on fair market value.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ACHIEVEMENTS ================= -->
+
+    <section id="achievements">
+
+        <h2 class="section-title">
+            Achievements
+        </h2>
+
+        <p class="section-subtitle">
+            Experiences that helped me learn, contribute and grow beyond academics.
+        </p>
+
+        <div class="achievements-grid">
+
+            <div class="achievement-card">
+                <h3>Edupreneur Pitch Fest</h3>
+                <p class="achievement-meta">3rd Position · LPU · 2026</p>
+                <p>
+                    Secured third position in the competitive Edupreneur
+                    Pitch Fest, presenting an innovative idea and gaining
+                    valuable experience in pitching, communication and
+                    problem solving.
+                </p>
+            </div>
+
+            <div class="achievement-card">
+                <h3>Hackathon Participation</h3>
+                <p class="achievement-meta">Hackathon · 2025</p>
+                <p>
+                    Participated in hackathons and collaborated with teammates
+                    to ideate, build and present practical solutions within
+                    challenging time constraints.
+                </p>
+            </div>
+
+            <div class="achievement-card">
+                <h3>Community Development</h3>
+                <p class="achievement-meta">Community Initiative</p>
+                <p>
+                    Contributed to community development activities focused
+                    on responsibility, teamwork and creating a positive
+                    impact through active participation.
+                </p>
+            </div>
+
+            <div class="achievement-card">
+                <h3>Community Teaching</h3>
+                <p class="achievement-meta">Teaching &amp; Outreach</p>
+                <p>
+                    Participated in community teaching activities, sharing
+                    knowledge with students while strengthening communication,
+                    patience and the ability to explain concepts clearly.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CERTIFICATES ================= -->
+
+    <section id="certificates">
+
+        <h2 class="section-title">
+            Certificates
+        </h2>
+
+        <p class="section-subtitle">
+            Certifications and participation achievements.
+        </p>
+
+
+        <div class="certificates-grid">
+
+
+            <!-- CERTIFICATE 1 -->
+
+            <div class="certificate-card"
+                 onclick="openCertificate('Pel/assets/Certificates/Certificate%201.jpeg')">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="Pel/assets/Certificates/Certificate%201.jpeg"
+                        alt="Hackathon-101 Certificate"
+                    >
+
+                </div>
+
+                <div class="certificate-content">
+
+                    <h3>
+                        Hackathon-101 by ARC
+                    </h3>
+
+                    <p>
+                        Certificate of participation recognizing
+                        involvement in Hackathon-101 by ARC,
+                        highlighting collaborative problem-solving,
+                        innovation and hackathon-based learning.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CERTIFICATE 2 -->
+
+            <div class="certificate-card"
+                 onclick="openCertificate('Pel/assets/Certificates/Certificate%202.jpeg')">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="Pel/assets/Certificates/Certificate%202.jpeg"
+                        alt="COD-A-FEST 3.0 Certificate"
+                    >
+
+                </div>
+
+                <div class="certificate-content">
+
+                    <h3>
+                        COD-A-FEST 3.0 — HiDevs
+                    </h3>
+
+                    <p>
+                        Participation in an 18-hour national-level
+                        hackathon focused on innovation, creativity,
+                        collaboration and Generative AI learning.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CERTIFICATE 3 -->
+
+            <div class="certificate-card"
+                 onclick="openCertificate('Pel/assets/Certificates/Certificate%203.jpeg')">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="Pel/assets/Certificates/Certificate%203.jpeg"
+                        alt="Cod-A-FestX Certificate"
+                    >
+
+                </div>
+
+                <div class="certificate-content">
+
+                    <h3>
+                        Cod-A-FestX 3.0
+                    </h3>
+
+                    <p>
+                        Participation in a national hackathon conducted
+                        under Astitwa, recognizing innovation,
+                        dedication, technical engagement and
+                        problem-solving.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CERTIFICATE 4 -->
+
+            <div class="certificate-card"
+                 onclick="openCertificate('Pel/assets/Certificates/Certificate%204.jpeg')">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="Pel/assets/Certificates/Certificate%204.jpeg"
+                        alt="Technical Participation Certificate"
+                    >
+
+                </div>
+
+                <div class="certificate-content">
+
+                    <h3>
+                        Technical Participation
+                    </h3>
+
+                    <p>
+                        Certificate recognizing technical
+                        participation, learning and engagement
+                        in a technology-focused activity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CERTIFICATE 5 -->
+
+            <div class="certificate-card"
+                 onclick="openCertificate('Pel/assets/Certificates/Certificate%205.jpeg')">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="Pel/assets/Certificates/Certificate%205.jpeg"
+                        alt="Certificate of Merit"
+                    >
+
+                </div>
+
+                <div class="certificate-content">
+
+                    <h3>
+                        Certificate of Merit
+                    </h3>
+
+                    <p>
+                        Recognition for dedication, participation
+                        and contribution in an academic or
+                        technical activity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CERTIFICATE 6 -->
+
+            <div class="certificate-card"
+                 onclick="openCertificate('Pel/assets/Certificates/Certificate%206.jpeg')">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="Pel/assets/Certificates/Certificate%206.jpeg"
+                        alt="Community Development Project Certificate"
+                    >
+
+                </div>
+
+                <div class="certificate-content">
+
+                    <h3>
+                        Community Development Project
+                    </h3>
+
+                    <p>
+                        Recognition for participation and contribution
+                        towards a community development initiative.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CERTIFICATE 7 -->
+
+            <div class="certificate-card"
+                 onclick="openCertificate('Pel/assets/Certificates/Certificate%207.jpeg')">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="Pel/assets/Certificates/Certificate%207.jpeg"
+                        alt="Certificate 7"
+                    >
+
+                </div>
+
+                <div class="certificate-content">
+
+                    <h3>
+                        Technical Achievement
+                    </h3>
+
+                    <p>
+                        Certificate representing continued
+                        participation, learning and technical growth.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CERTIFICATE 8 -->
+
+            <div class="certificate-card"
+                 onclick="openCertificate('Pel/assets/Certificates/Certificate%208.jpeg')">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="Pel/assets/Certificates/Certificate%208.jpeg"
+                        alt="Certificate 8"
+                    >
+
+                </div>
+
+                <div class="certificate-content">
+
+                    <h3>
+                        Learning & Participation
+                    </h3>
+
+                    <p>
+                        Recognition of participation and involvement
+                        in a learning-oriented technical activity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CERTIFICATE 9 -->
+
+            <div class="certificate-card"
+                 onclick="openCertificate('Pel/assets/Certificates/Certificate%209.jpeg')">
+
+                <div class="certificate-image">
+
+                    <img
+                        src="Pel/assets/Certificates/Certificate%209.jpeg"
+                        alt="Certificate 9"
+                    >
+
+                </div>
+
+                <div class="certificate-content">
+
+                    <h3>
+                        Certificate of Participation
+                    </h3>
+
+                    <p>
+                        Recognition of participation, dedication
+                        and continued involvement in learning
+                        and technical activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact
+        </h2>
+
+        <p class="section-subtitle">
+            Let's connect and build something meaningful.
+        </p>
+
+
+        <div class="contact-box">
+
+            <h3>
+                Have an idea or opportunity?
+            </h3>
+
+            <p>
+                Feel free to reach out for collaborations,
+                projects, hackathons or simply to connect.
+            </p>
+
+            <a
+                href="mailto:nityagupta194@gmail.com"
+                class="btn btn-primary">
+                Get In Touch →
+            </a>
+
+            <div class="contact-links">
+
+                <a href="mailto:nityagupta194@gmail.com"
+                   class="contact-link">
+                    Email
+                </a>
+
+                <a href="https://github.com/NITYA-max364"
+                   class="contact-link"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    GitHub
+                </a>
+
+                <a href="https://www.linkedin.com/in/nitya-gupta-706b60390/"
+                   class="contact-link"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 <span>Nitya Gupta</span>. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= CERTIFICATE POPUP ================= -->
+
+    <div class="modal" id="certificateModal">
+
+        <span class="close" onclick="closeCertificate()">
+            &times;
+        </span>
+
+        <img id="certificatePreview" src="" alt="Certificate Preview">
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function openCertificate(imagePath) {
+
+            const modal =
+                document.getElementById("certificateModal");
+
+            const image =
+                document.getElementById("certificatePreview");
+
+            image.src = imagePath;
+
+            modal.classList.add("show");
+        }
+
+
+        function closeCertificate() {
+
+            const modal =
+                document.getElementById("certificateModal");
+
+            const image =
+                document.getElementById("certificatePreview");
+
+            modal.classList.remove("show");
+
+            image.src = "";
+        }
+
+
+        document
+            .getElementById("certificateModal")
+            .addEventListener("click", function(event) {
+
+                if (event.target === this) {
+                    closeCertificate();
+                }
+
+            });
+
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Escape") {
+                closeCertificate();
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
